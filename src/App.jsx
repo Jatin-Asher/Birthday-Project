@@ -14,7 +14,7 @@ function WelcomeScreen() {
 
   const fetchData = async () => {
    
-      const url = `http://localhost:3999/birthday/${encodeURIComponent(userInput)}`;
+      const url = `/api/birthday/${encodeURIComponent(userInput)}`;
       window.location.href = url;
     
   };
