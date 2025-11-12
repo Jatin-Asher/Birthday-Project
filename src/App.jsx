@@ -2,19 +2,21 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import confetti from 'canvas-confetti';
 
+
 function WelcomeScreen() {
-  const [windowSize, setWindowSize] = useState({
+  const [setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const [showConfetti, setShowConfetti] = useState(true);
+  const [setShowConfetti] = useState(true);
   const [animate, setAnimate] = useState(false);
   const [userInput, setUserInput] = useState('');
   // const [responsedata, setResponseData] = useState('null');
 
   const fetchData = async () => {
    
-      const url = `/api/birthday/${encodeURIComponent(userInput)}`;
+      const url = `http://localhost:3999/birthday/${encodeURIComponent(userInput)}`;
+      // const url = `api/birthday/${encodeURIComponent(userInput)}`;
       window.location.href = url;
     
   };
