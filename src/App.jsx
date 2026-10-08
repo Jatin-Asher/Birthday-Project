@@ -15,7 +15,12 @@ function WelcomeScreen() {
 
   const fetchData = async () => {
     const name = userInput.trim() || 'Buddy';
-    window.location.href = `http://localhost:3999/birthday/${encodeURIComponent(name)}`;
+    const isLocalhost = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+    const backendUrl = isLocalhost
+      ? 'http://localhost:3999'
+      : 'https://birthday-project-ditw.onrender.com';
+
+    window.location.href = `${backendUrl}/birthday/${encodeURIComponent(name)}`;
   };
 
   useEffect(() => {
