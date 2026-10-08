@@ -14,11 +14,8 @@ function WelcomeScreen() {
   // const [responsedata, setResponseData] = useState('null');
 
   const fetchData = async () => {
-   
-      const url = `'/api/birthday/Buddys'`;
-      // const url = `api/birthday/${encodeURIComponent(userInput)}`;
-      window.location.href = url;
-    
+    const name = userInput.trim() || 'Buddy';
+    window.location.href = `http://localhost:3999/birthday/${encodeURIComponent(name)}`;
   };
 
   useEffect(() => {
