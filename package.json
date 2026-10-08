@@ -9,7 +9,6 @@
     "preview": "vite preview",
     "start": "vite",
     "birthday": "node src/Api/Main1.js"
-
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",

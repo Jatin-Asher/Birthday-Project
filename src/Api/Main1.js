@@ -4,7 +4,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 3999;
+const PORT = process.env.PORT || 3999;
 console.log('Current working directory:', process.cwd());
 console.log('Serving static files from:', path.join(__dirname, '../../public'));
 app.use(express.json());
@@ -78,6 +78,6 @@ app.get('/birthday/:name', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.send(html);
 });
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}/birthday/Buddys`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Birthday server is listening on port ${PORT}`);
 });
